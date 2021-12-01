@@ -65,7 +65,7 @@ pipeline {
                     withSonarQubeEnv('Sonar') {
                         // some block
                         sh "${scannerHome}/bin/sonar-scanner" \
-			sonar.projectKey=test-node-js \
+		//	-Dsonar.projectKey=test-node-js \
            	//	-Dsonar.sources=. \
            	//	-Dsonar.css.node=. \
            	//	-Dsonar.host.url=http://localhost:9000 \
