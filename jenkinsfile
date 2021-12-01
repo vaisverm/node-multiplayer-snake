@@ -69,7 +69,7 @@ pipeline {
            	//	-Dsonar.sources=. \
            	//	-Dsonar.css.node=. \
            	//	-Dsonar.host.url=http://localhost:9000 \
-           		-Dsonar.login=405140f325e46ff4f06aea10b6fa15bae41e6272"
+           	//	-Dsonar.login=405140f325e46ff4f06aea10b6fa15bae41e6272"
                     }
                 }
             }
