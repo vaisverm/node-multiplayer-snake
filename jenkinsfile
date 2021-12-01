@@ -28,6 +28,12 @@ pipeline {
    //   }
    // }
    
+   stage('SonarQubeScan') {
+   withSonarQubeEnv('Sonar'){
+     sh 'mvn sonar:sonar'
+   }
+ }
+   
    stage('Docker Deployment') {
       steps {
         sh 'docker build -t nodeapp:v2 .'
