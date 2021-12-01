@@ -28,6 +28,7 @@ pipeline {
         sh 'npm start'
       }
     } */
+    //test
    
     stage('SonarQube Analysis') {
             tools {
