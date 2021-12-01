@@ -36,7 +36,7 @@ pipeline {
   // }
  // }
  
- stage('Code Quality Check via SonarQube') {
+ /* stage('Code Quality Check via SonarQube') {
    steps {
        script {
      //  def scannerHome = tool 'sonarqube';
@@ -50,7 +50,25 @@ pipeline {
                }
            }
        }
-   }
+   } */
+   
+   
+    stage('SonarQube Analysis') {
+            tools {
+                nodejs 'nodejs'
+            }
+            steps {
+                nodejs('nodejs') {
+                    script {
+                        scannerHome = tool 'SonarScanner';
+                    }
+                    withSonarQubeEnv('Sonar') {
+                        // some block
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
    
    stage('Docker Deployment') {
       steps {
