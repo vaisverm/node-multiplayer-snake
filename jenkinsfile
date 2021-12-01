@@ -22,36 +22,11 @@ pipeline {
       }
     }
 	
-   //stage('Start') {
-   //     steps {
-   //     sh 'npm start'
-   //   }
-   // }
-   
- //  stage('SonarQubeScan') {
-  // steps {
-  // withSonarQubeEnv('Sonar'){
-  //   sh 'npm sonar:sonar'
-  //   }
-  // }
- // }
- 
- /* stage('Code Quality Check via SonarQube') {
-   steps {
-       script {
-     //  def scannerHome = tool 'sonarqube';
-           withSonarQubeEnv("Sonar") {
-           sh "${tool("sonarqube")}/bin/sonar-scanner \
-           -Dsonar.projectKey=test-node-js \
-           -Dsonar.sources=. \
-           -Dsonar.css.node=. \
-           -Dsonar.host.url=http://localhost:9000 \
-           -Dsonar.login=405140f325e46ff4f06aea10b6fa15bae41e6272"
-               }
-           }
-       }
-   } */
-   
+   /* stage('Start') {
+        steps {
+        sh 'npm start'
+      }
+    } */
    
     stage('SonarQube Analysis') {
             tools {
@@ -65,11 +40,6 @@ pipeline {
                     withSonarQubeEnv('Sonar') {
                         // some block
                         sh "${scannerHome}/bin/sonar-scanner" \
-		//	-Dsonar.projectKey=test-node-js \
-           	//	-Dsonar.sources=. \
-           	//	-Dsonar.css.node=. \
-           	//	-Dsonar.host.url=http://localhost:9000 \
-           	//	-Dsonar.login=405140f325e46ff4f06aea10b6fa15bae41e6272"
                     }
                 }
             }
