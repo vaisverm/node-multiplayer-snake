@@ -50,7 +50,8 @@ pipeline {
    stage('Docker Deployment') {
       steps {
         sh 'docker build -t nodeapp:v2 .'
-	sh 'docker run -d --name test-snake-2 nodeapp:v2'
+	//sh 'docker run -d --name test-snake-2 nodeapp:v2'
+	sh 'docker run -p 3000:8085 -d --name test-snake-2 nodeapp:v2'
       }
     }
   }
