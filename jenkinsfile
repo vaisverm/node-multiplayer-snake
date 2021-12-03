@@ -3,20 +3,20 @@ pipeline {
     
   stages {
         
-    stage('Git') {
+    stage('Git CheckOut') {
       steps {
         git 'https://github.com/vaisverm/node-multiplayer-snake.git'
       }
     }
      
-    stage('Build') {
+    stage('Install Dependencies') {
       steps {
         sh 'npm install'
       }
     }  
     
             
-    stage('Test') {
+    stage('Test the Pacakage') {
       steps {
         sh 'npm test'
       }
@@ -28,7 +28,7 @@ pipeline {
         sh 'npm start'
       }
     } */
-    //test
+   
    
     stage('SonarQube Analysis') {
             tools {
