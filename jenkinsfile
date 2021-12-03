@@ -51,7 +51,7 @@ pipeline {
       steps {
         sh 'docker build -t nodeapp:v2 .'
 	//sh 'docker run -d --name test-snake-2 nodeapp:v2'
-	sh 'docker run -it -p 8085:8085 -d --name test-snake-2 nodeapp:v2'
+	sh 'docker run -it -p 8085:3000 -d --name test-snake-2 nodeapp:v2'
       }
     }
   }
