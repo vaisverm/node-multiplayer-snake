@@ -22,7 +22,7 @@ pipeline {
       }
     }
 
-
+//test
    /* stage('Start') {
         steps {
         sh 'npm start'
