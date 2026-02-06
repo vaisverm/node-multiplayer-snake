@@ -1,4 +1,4 @@
-FROM node
+FROM node:25.6.0-bookworm
 
 #WORKDIR /usr/src/app
 WORKDIR /vv/project4/node-multiplayer-snake
